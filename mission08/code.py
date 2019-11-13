@@ -59,9 +59,9 @@ class Chanson :
         a = auteur
         d = durée
         """
-        self.t = t
-        self.a = a
-        self.d = d    
+        self.titre = t
+        self.artiste = a
+        self.duree = d    
     
     
     def __str__(self):
@@ -70,15 +70,15 @@ class Chanson :
         "TITRE - AUTEUR - DUREE".
         Par exemple: "Let's_Dance - David_Bowie - 00:04:05"
         """
-        return "{0}, {1}, {2}".format(self.t, self.a, self.d)
+        return "{0} - {1} - {2}".format(self.titre, self.artiste , self.duree)
     
 class Album:
     
     
     def __init__(self,n):
         self.n = n
-        self.alb = []
-        self.total_d = Duree(0,0,0)
+        self.album = []
+        self.duree_tot = Duree(0,0,0)
         
     def add(self,chanson):
        """
@@ -91,14 +91,16 @@ class Album:
            print("la chanson doit être de type chanson")
            return
         
-       elif len(self.alb) == 99 or (self.total_d.toSecondes() + chanson.duree.toSecondes() > 75*60):
+       elif len(self.album) == 99 or (self.duree_tot.toSecondes() + chanson.duree.toSecondes() > 75*60):
            return False
         
        else:
-           self.alb.append(chanson)
-           self.total_d.ajouter(chanson.duree)
+           self.album.append(chanson)
+           self.duree_tot.ajouter(chanson.duree)
            return True
 
     def __str__(self):
-     for i in range(len(self)):
-          print("{0} " - " {1} " - " {2}).format(self.t, self.a, self.d)
+     texte = "Album {} ({} chansons, {})".format(self.n,len(self.album),self.duree_tot)
+     for i in range(len(self.album)):
+          texte += "\n{:02}: {}".format(i+1,self.album[i])
+     return texte
