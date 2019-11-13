@@ -98,3 +98,7 @@ class Album:
            self.alb.append(chanson)
            self.total_d.ajouter(chanson.duree)
            return True
+
+    def __str__(self):
+     for i in range(len(self)):
+          print("{0} " - " {1} " - " {2}).format(self.t, self.a, self.d)
