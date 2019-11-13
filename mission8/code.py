@@ -52,3 +52,27 @@ class Duree :
     m = self.time % 3600 //60
     s = self.time % 3600 %60
     return "{:02}:{:02}:{:02}".format(h,m,s)
+
+
+
+class Chanson :
+    
+    def __init__(self,t,a,d):
+        """
+        t = titre
+        a = auteur
+        d = durée
+        """
+        self.t = t
+        self.a = a
+        self.d = d    
+    
+    
+    def __str__(self):
+        """
+        Retourne un String décrivant cette chanson sous le format
+        "TITRE - AUTEUR - DUREE".
+        Par exemple: "Let's_Dance - David_Bowie - 00:04:05"
+        """
+        return "{0}, {1}, {2}".format(self.t, self.a, self.d)
+    
