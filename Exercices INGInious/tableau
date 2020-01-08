@@ -1,0 +1,14 @@
+def table(filename_in,filename_out,width):
+    with open(filename_in,"r") as fin:
+        with open(filename_out, "w") as fout:
+            fout.write("+"+(width+2)*"-"+"+\n")
+            for line in fin:
+                fout.write("| ")
+                size = len(line)
+                if size > width:
+                    word = line[0:width]
+                    fout.write(word + " " + "|\n")
+                else:
+                    line.rstrip("\n")
+                    fout.write(line + " " + "|\n")
+            fout.write("+"+(width+2)*"-"+"+\n")
