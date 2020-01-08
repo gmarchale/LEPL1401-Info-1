@@ -12,3 +12,12 @@ def read_coordinates(filename):  #Pas très beau mais fonctionne
             l.append(i, i+1)
             i+=1
     return l
+
+def read_coordinates(filename):  #Méthode plus jolie
+    l = []
+    with open(filename,"r") as f:
+        for line in f:
+            b=line.rstrip('\n')
+            x=b.split(",")
+            l.append((float(x[0]),float(x[1])))
+    return l
