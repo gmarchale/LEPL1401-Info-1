@@ -7,7 +7,7 @@ def write_coordinates(filename, l):
 def read_coordinates(filename):#Pas très beau mais fonctionne
     l = []
     with open(filename,"r") as f:
-        flist = f.readlines().split
+        flist = f.readlines()
         for i in flist:
             l.append(i, i+1)
             i+=1
