@@ -4,7 +4,7 @@ def write_coordinates(filename, l):
             f.write(l[i][0],l[i][1],"\n")
 
 
-def read_coordinates(filename):#Pas très beau mais fonctionne
+def read_coordinates(filename):  #Pas très beau mais fonctionne
     l = []
     with open(filename,"r") as f:
         flist = f.readlines()
