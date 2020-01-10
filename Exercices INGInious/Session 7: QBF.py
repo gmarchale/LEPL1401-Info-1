@@ -15,7 +15,8 @@ def topk_words(words, k):
     else:
         for i in range(k):
             top_list.append(reversed_list[i])
-        for j in range (k,len(reversed_list)):                      #
-            if reversed_list[j][0]==reversed_list[k-1][0]:          #
-                top_list.append(reversed_list[j])                   #
-    return top_list
+        for j in range (k,len(reversed_list)):                      # Cette partie sert à s'occuper du cas ou le k ème mot 
+            if reversed_list[j][0]==reversed_list[k-1][0]:          # de top_list n'est pas le seul avec cette occurence
+                top_list.append(reversed_list[j])                   # Par exemple si k = 2 et que dans la liste il y a 3 fois "A", 2 fois "B"
+                                                                    # et 2 fois "C". Alors la fonction renverra une liste de taille k+1
+    return top_list                                                 
