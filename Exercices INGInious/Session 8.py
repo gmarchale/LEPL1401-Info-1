@@ -77,3 +77,24 @@ class SMSStore:
         
     def clear(self):
         self.storage = []
+
+
+#----------------------------------- 
+# Session 8: Q* Création d'objets depuis un fichier
+#-----------------------------------
+
+def marks_from_file(filename):          # !!! Ne passe pas le test mais semble être correct ?
+    with open(filename,'r') as fin:
+        file_list = fin.readlines()
+        students = []
+        
+        for i in file_list:
+            i = i.rstrip("\n")
+            i = i.split(" ")
+            students.append(Student(i[0],i[1],i[2]))
+    return students
+
+
+#----------------------------------- 
+# Session 8: Amazon dispatch center must pay
+#-----------------------------------
